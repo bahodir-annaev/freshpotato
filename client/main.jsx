@@ -11,7 +11,7 @@ import App from '/imports/ui/App';
 //   };
 // })(App);
 
-Meteor.call('ShowsGet', (error, result) => {
+Meteor.call('Shows.get', (error, result) => {
   Meteor.startup(() => {
     render(<App shows={result} />, document.getElementById('react-target'));
   });
