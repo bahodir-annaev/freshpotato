@@ -2,8 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http';
 
 Meteor.methods({
-  'Shows.get': (page = 1, limit = 20) => {
-    const result = HTTP.get(`https://api-staging.trakt.tv/shows/popular?page=${page}&limit=${limit}`, {
+  'Shows.get': (page = 1, limit = 20, query) => {
+    const result = HTTP.get(`https://api-staging.trakt.tv/shows/popular?page=${page}&limit=${limit}${query}`, {
       headers: {
         'Content-Type': 'application/json',
         'trakt-api-version': 2,
@@ -11,7 +11,7 @@ Meteor.methods({
       },
     });
 
-    return result.data;
+    return result;
   },
   'Shows.search': query => {
     const result = HTTP.get(`https://api.trakt.tv/search/movie?query=${query}`, {

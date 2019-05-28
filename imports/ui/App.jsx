@@ -1,6 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ShowsList from './ShowsList';
+import { fetchNextPage } from '/imports/state/actions';
 
-const App = ({ shows }) => <div><ShowsList shows={shows} /></div>;
+const App = ({ shows, fetchNextPage }) => (
+  <div>
+    <ShowsList shows={shows} />
+    <button type="button" onClick={fetchNextPage}>Load more!</button>
+  </div>
+);
 
-export default App;
+const mapStateToProps = state => ({ shows: state.shows });
+
+export default connect(mapStateToProps, { fetchNextPage })(App);

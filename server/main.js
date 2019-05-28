@@ -1,6 +1,8 @@
 import { HTTP } from 'meteor/http';
 import { Meteor } from 'meteor/meteor';
 import Shows from '../imports/api/shows';
+import '/imports/api/methods.js';
+
 
 function loadShows() {
   const result = HTTP.get('https://api-staging.trakt.tv/shows/popular?limit=50', {
