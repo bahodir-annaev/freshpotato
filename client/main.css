@@ -2,3 +2,18 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+.genre-pill {
+  padding: 2px;
+  background: #898989;
+  margin: 1px;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.show-item {
+  display: grid;
+  grid-template-columns: 30px 300px 50px 200px 50px;
+  grid-auto-rows: 1fr;
+  border-top: 1px solid #343434;
+}

@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import App from '/imports/ui/App';
+import App from '/imports/ui/container/App';
 import showsReducer from '/imports/state/reducers';
 import { fetchShows } from '/imports/state/actions';
 import '/imports/api/methods.js';
@@ -14,9 +14,8 @@ const store = createStore(
   applyMiddleware(thunk)
 );
 
-store.dispatch(fetchShows())
-  .then(result => {
-    Meteor.startup(() => {
-      render(<Provider store={store}><App shows={result.shows} /></Provider>, document.getElementById('react-target'));
-    });
-  });
+Meteor.startup(() => {
+  render(<Provider store={store}><App /></Provider>, document.getElementById('react-target'));
+});
+
+store.dispatch(fetchShows());
