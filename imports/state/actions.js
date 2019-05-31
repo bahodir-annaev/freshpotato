@@ -65,10 +65,10 @@ const getFilterQueryString = filter => {
     queryString += `&query=${filter.query}`;
   }
   if (filter.years) {
-    queryString += `&query=${filter.years}`;
+    queryString += `&years=${filter.years}`;
   }
-  if (filter.genre) {
-    queryString += `&query=${filter.genre}`;
+  if (filter.genres && filter.genres.length > 0) {
+    queryString += `&genres=${filter.genres.join(',')}`;
   }
 
   return queryString;

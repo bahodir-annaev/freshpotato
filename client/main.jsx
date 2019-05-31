@@ -15,7 +15,14 @@ const store = createStore(
 );
 
 Meteor.startup(() => {
-  render(<Provider store={store}><App /></Provider>, document.getElementById('react-target'));
+  render(
+    (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    ),
+    document.getElementById('react-target')
+  );
 });
 
 store.dispatch(fetchShows());

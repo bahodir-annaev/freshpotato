@@ -7,7 +7,7 @@ const handleEnter = (event, callback) => {
 };
 
 const SearchBar = ({ query, doFilter }) => (
-  <div>
+  <div className="header_search-bar">
     <input placeholder="Search" defaultValue={query} onKeyUp={event => handleEnter(event, doFilter)} />
   </div>
 );

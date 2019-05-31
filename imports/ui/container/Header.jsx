@@ -4,8 +4,8 @@ import SearchBar from '../presentation/SearchBar';
 import { fetchFilteredShows } from '../../state/actions';
 
 const Header = ({ filter, doFilter }) => (
-  <div style={{ display: 'flex' }}>
-    <span><h2 style={{ margin: 0 }}>FreshPotato</h2></span>
+  <div className="header">
+    <div><h2 style={{ margin: 0 }}>FreshPotato</h2></div>
     <SearchBar query={filter.query} doFilter={doFilter} />
   </div>
 );

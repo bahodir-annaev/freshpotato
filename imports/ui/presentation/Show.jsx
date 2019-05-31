@@ -1,12 +1,13 @@
 import React from 'react';
 
 const Show = ({ show, number }) => (
-  <div className="show-item">
+  <div className="shows-list_item">
     <div>{number}</div>
     <div>{show.title}</div>
     <div>{show.year}</div>
     <div><Genres genres={show.genres} /></div>
-    <div>{show.rating}</div>
+    <div style={{ textAlign: 'right' }}>{show.rating.toFixed(2)}</div>
+    <div>{show.status}</div>
   </div>
 );
 

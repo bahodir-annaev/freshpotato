@@ -3,6 +3,24 @@ body {
   font-family: sans-serif;
 }
 
+.header {
+  padding: 0 20px;
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  top: 0;
+  background: #aaa;
+  height: 40px;
+}
+
+.header_search-bar {
+  text-align: right;
+}
+
+.shows-list {
+  padding:20px 20px;
+}
+
 .genre-pill {
   padding: 2px;
   background: #898989;
@@ -11,9 +29,41 @@ body {
   font-size: 0.8rem;
 }
 
-.show-item {
+.shows-list_item {
   display: grid;
-  grid-template-columns: 30px 300px 50px 200px 50px;
-  grid-auto-rows: 1fr;
+  grid-template-columns: 30px 300px 50px 200px 60px 150px;
+  grid-auto-columns: 100px;
   border-top: 1px solid #343434;
+}
+
+.shows-list_item > div {
+  padding: 2px 5px;
+}
+
+.shows-list_header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.filter {
+  padding:20px 20px;
+  width: 50%;
+}
+
+.filter_genres {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px 0;
+}
+
+.filter_search {
+  padding: 10px 0;
+}
+
+.filter_years {
+  padding: 10px 0;
+}
+
+.search-input {
+  width:100%;
 }
